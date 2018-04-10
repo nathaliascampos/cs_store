@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+            <title>
+                Ajax - BBQ
+            </title>
+            <!-- Materialize CSS -->
+            <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" rel="stylesheet">
+                <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
+                <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript">
+                </script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js" type="text/javascript">
+                </script>
+                <link href="css/style.css" rel="stylesheet">
+                </link>
+            </link>
+        </meta>
+    </head>
+    <body>
+        <header>
+            <div class="row">
+            </div>
+        </header>
+        <main class="container">
+            <div class="row center">
+                <div class="input-field col s12 m4 l4">
+                    <button class="btn waves-effect waves-light" onclick="novo()">
+                        Novo
+                    </button>
+                </div>
+                <div class="input-field col s12 m4 l4">
+                    <button class="btn waves-effect waves-light" onclick="salvar()">
+                        Salvar
+                    </button>
+                </div>
+            </div>
+            <form class="form-inline" name="formChurrasco">
+                <div class="row">
+                    <div class="input-field col s12 m4 l4">
+                        ID
+                        <input id="id" name="id" type="number">
+                        </input>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        Carne
+                        <input id="carne" name="carne" type="text">
+                        </input>
+                    </div>
+                    <div class="input-field col s12 m4 l4">
+                        Peso
+                        <input id="peso" name="peso" type="number">
+                        </input>
+                    </div>
+                </div>
+            </form>
+            <table id="lista-carne" class="highlight centered">
+                <thead>
+                    <tr>
+                        <th>
+                            ID
+                        </th>
+                        <th>
+                            Carne
+                        </th>
+                        <th>
+                            Peso
+                        </th>
+                        <th>
+                            Editar
+                        </th>
+                        <th>
+                            Excluir
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </main>
+    </body>
+    <script type="text/javascript">
+        /** Host + Endpoint da nossa aplicação do backend **/
+        var ws = 'http://localhost:5000/churrasco';
+
+        /** Este método do jQuery é 
+        executado assim que a página
+        é carregada. Faremos uma busca por
+        toda lista do churrasco ao
+        carregar a página */
+        $(document).ready(function() {
+            listar();
+        });
+
+        function novo() {
+            limparCampos();
+        }
+
+        /** Aqui vamos preencher os
+        campos do formulário com os dados
+        da linha selecionada */
+        function editar(id) {
+            $.ajax({
+                url: ws + '/buscarPorId/' + id,
+                dataType: 'json',
+                success: function(data) {
+                    /** O seletor $("#carne") serve
+                    para indicar para o jQuery que estamos
+                    buscando um campo com id='carne'.
+                    O # denota que estamos buscando pelo id
+                    da tag html. A função val() será utilizada
+                    para atribuir um valor para o campo. */
+                    $("#id").val(data[0].id);
+                    $("#carne").val(data[0].carne);
+                    $("#peso").val(data[0].peso);
+                }
+            });
+        }
+
+        function salvar() {
+            /** Montando um objeto 'churrasco'
+            com os dados submetidos do formulário */
+            var churrasco = {
+                id: $("#id").val(),
+                carne: $("#carne").val(),
+                peso: $("#peso").val()
+            }
+
+            if(churrasco.id != undefined && churrasco.id != '') { //Se nosso objeto tiver id, faremos um update
+                $.ajax({
+                    url: ws + '/atualizar',
+                    type: "POST",
+                    dataType: 'json',
+                    data: {
+                        id: churrasco.id,
+                        carne: churrasco.carne,
+                        peso: churrasco.peso
+                    },
+                    success: function(data) {
+                        /** Após o sucesso na atualização,
+                        * busco todos os registros
+                        * e populo novamente a tabela
+                        **/
+                        listar();
+
+                        /** Limpando campos do form */
+                        limparCampos();
+                    }
+                });
+            } else { //Caso contrário faremos um insert
+                $.ajax({
+                    url: ws + '/inserir',
+                    type: "POST",
+                    dataType: 'json',
+                    data: {
+                        carne: churrasco.carne,
+                        peso: churrasco.peso
+                    },
+                    success: function(data) {
+                        /** Após o sucesso na inserção,
+                        * busco todos os registros
+                        * e populo novamente a tabela
+                        **/
+                        listar();
+
+                        /** Limpando campos do form */
+                        limparCampos();
+                    }
+                });
+            }
+        }
+
+        //TODO: escrever o método de salvar
+
+        function remover(id) {
+            $.ajax({
+                url: ws + '/remover',
+                type: "POST",
+                dataType: 'json',
+                data: {
+                    id: id
+                },
+                success: function(data) {
+                    /** Após o sucesso na remoção,
+                    * busco todos os registros
+                    * e populo novamente a tabela
+                    **/
+                    listar();
+                }
+            });
+        }
+
+        function listar() {
+            $.ajax({
+                url: ws + '/buscarTodos',
+                dataType: 'json',
+                success: function(data) {
+                    populateTable(data);
+                }
+            });
+        }
+
+        function populateTable(data) {
+            /** O seletor $("#lista-carne > tbody") detona que
+            estaremos selecionando o tbody da table com id='lista-carne'.
+            A função empty() servirá para excluir todas as rows que essa
+            table venha a possuir.
+            A função append() servirá para para incluir o conteúdo passado
+            como parâmetro no tbody da 'lista-carne' */
+            $("#lista-carne > tbody").empty(); //Limpo a <table> antes de popular
+            $.each(data, function() {
+                $("#lista-carne > tbody").append(`<tr>` +
+                    `<td>` + this.id + `</td>` +
+                    `<td><b>` + this.carne + `</b></td>` +
+                    `<td>` + this.peso + `kg</td>` +
+                    `<td><a onclick="editar(` + this.id + `)"><img class="responsive-img lista-img" src="img/edit.png"/></a></td>` +
+                    `<td><a onclick="remover(` + this.id + `)"><img class="responsive-img lista-img" src="img/remove.png"/></a></td>` +
+                    `</tr>`);
+            })
+        }
+
+        function limparCampos() {
+            /** Aqui estamos limpando todos os campos do form */
+            $("#id").val('');
+            $("#carne").val('');
+            $("#peso").val('');
+        }
+    </script>
+</html>
