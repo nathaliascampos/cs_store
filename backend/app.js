@@ -13,7 +13,7 @@ var server = restify.createServer({
     name: 'Node 1'
 });
 
-// http://localhost:5000/hello -> chama função helloF
+// http://localhost:5000/hello -> chama função helloF GET NO POSTMAN
 server.get('/hello', helloF);
 
 server.listen(5000, function(){
