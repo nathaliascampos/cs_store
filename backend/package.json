@@ -9,6 +9,7 @@
   "author": "Nathalia Campos",
   "license": "ISC",
   "dependencies": {
-    "restify": "^7.1.1"
+    "express": "^4.16.3",
+    "mysql": "^2.15.0"
   }
 }
