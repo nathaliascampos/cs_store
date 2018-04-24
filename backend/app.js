@@ -5,7 +5,7 @@ var mysql = require('mysql');
 //Configuração do BD
 var objConn = {
     host: 'localhost',
-    user: 'root'
+    user: 'root',
     password: '',
     database: 'skin_cs'
 }
@@ -17,7 +17,7 @@ var port = process.env.PORT || 5000;
 var user = express.Router();
 
 //INSERIR USER
-user.post('inserir', function(req, res)){
+user.post('/inserir', function(req, res){
     var login = req.body.login;
     var senha = req.body.senha;
 
@@ -36,7 +36,7 @@ user.post('inserir', function(req, res)){
     });
 
     connection.end();
-}
+});
 
 //ATUALIZAR USER
 user.post('/atualizar', function(req, res) {
@@ -131,7 +131,8 @@ user.post('/remover', function(req, res) {
 
 app.use('/user', user);
 
-
+app.listen(port);
+console.log('Iniciando a aplicação na porta ' + port);
 
 
 
