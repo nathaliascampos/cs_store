@@ -1,230 +1,278 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-            <title>
-                CS STORE
-            </title>
-            <!-- Materialize CSS -->
-            <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css" rel="stylesheet">
-                <!-- JavaScript for: jQuery, angular, materialize, and angular-materialize. All of which are needed. -->
-                <script src="https://code.jquery.com/jquery-3.1.1.min.js" type="text/javascript">
-                </script>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js" type="text/javascript">
-                </script>
-                <link href="css/style.css" rel="stylesheet">
-                </link>
-            </link>
-        </meta>
-    </head>
+<head>
+    <meta charset="utf-8">
+        <title>
+            CS STORE
+        </title>
+    </meta>
 
-    <body>
-        <header>
-            <div class="row">
-            </div>
-        </header>
-        <main class="container">
-            <div class="row center">
-                <div class="input-field col s12 m4 l4">
-                    <button class="btn waves-effect waves-light" onclick="novo()">
-                        Novo
-                    </button>
-                </div>
-                <div class="input-field col s12 m4 l4">
-                    <button class="btn waves-effect waves-light" onclick="salvar()">
-                        Salvar
-                    </button>
-                </div>
-            </div>
-            <form class="form-inline" name="formChurrasco">
-                <div class="row">
-                    <div class="input-field col s12 m4 l4">
-                        ID
-                        <input id="id" name="id" type="number">
-                        </input>
-                    </div>
-                    <div class="input-field col s12 m4 l4">
-                        Carne
-                        <input id="carne" name="carne" type="text">
-                        </input>
-                    </div>
-                    <div class="input-field col s12 m4 l4">
-                        Peso
-                        <input id="peso" name="peso" type="number">
-                        </input>
-                    </div>
-                </div>
-            </form>
-            <table id="lista-carne" class="highlight centered">
-                <thead>
-                    <tr>
-                        <th>
-                            ID
-                        </th>
-                        <th>
-                            Carne
-                        </th>
-                        <th>
-                            Peso
-                        </th>
-                        <th>
-                            Editar
-                        </th>
-                        <th>
-                            Excluir
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-        </main>
-    </body>
-    <script type="text/javascript">
-        /** Host + Endpoint da nossa aplicação do backend **/
-        var ws = 'http://localhost:5000/churrasco';
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        /** Este método do jQuery é 
-        executado assim que a página
-        é carregada. Faremos uma busca por
-        toda lista do churrasco ao
-        carregar a página */
-        $(document).ready(function() {
-            listar();
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="css/materialize.css"> </link>
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css"> </link>
+    
+</head>
+
+<body>
+        
+    <!-- <div class="row">
+    <div class="col s12 ">
+        <div class="card-panel blue-grey darken-1 white-text">Olá Mundo</div>
+    </div>
+    </div> -->
+
+    <!-- Navbar -->
+    <!-- <div class="navfixed"> -->
+        <nav class="transparent">
+            <div class="nav-wrapper container">
+                <a href="index.html" class="brand-logo"> 
+                    <img src="images/logo2.jpg"  width="85" height="60" alt="" />  
+                </a>
+                <a href="index.html" class="brand-logo center">CS Store</a>
+                <!-- Add menu mobile -->
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+                    <i class="material-icons">menu</i>
+                </a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down text-blue-grey">
+                    <li><a href="money.html">Add money</a></li>
+                    <li><a href="steam.html">Steam</a></li>
+                    <li><a href="login.html">Login</a></li>
+                </ul>
+            </div>
+            
+        </nav> 
+    <!-- </div> -->
+
+    <!-- Add componentes do menu mobile -->
+    <ul id="mobile-demo" class="sidenav">
+        <li><a href="money.html">Add money</a></li>
+        <li><a href="steam.html">Steam</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul> 
+
+    <!-- <div id="index-banner" class="parallax-container">
+        <div class="section no-pad-bot">
+            <div class="container">
+                <br><br>
+                <h1 class="header center teal-text text-lighten-2">Buy the best skins</h1>
+                <div class="row center">
+                    <h5 class="header col s12 light">Click to login</h5>
+                </div>
+                <div class="row center">
+                    <a href="login" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Login</a>
+                </div>
+                <br><br>
+        
+            </div>
+        </div>
+        <div class="parallax"><img src="images/csgo3.jpg" alt="Unsplashed background img 1"></div>
+    </div> -->
+    
+
+    <!-- Parallax -->
+    <div class="parallax-container">
+        <div class="parallax"><img src="images/csgo2.jpg"></div>
+    </div>
+
+    <!-- Card com tabs-->
+    <div class="row container ">
+        <div class="card">
+            <div class="card-content">
+                <p class="center">Choose your skin</p>
+            </div>
+            <div class="card-tabs">
+                <ul class="tabs tabs-fixed-width ">
+                    <li class="tab"><a class="active" href="#riffle">Riffle</a></li>
+                    <li class="tab"><a href="#awp">AWP</a></li>
+                    <li class="tab"><a href="#pistola">Pistol</a></li>
+                    <li class="tab"><a href="#knife">Knife</a></li>
+                </ul>
+            </div>
+
+            <div class="card-content grey lighten-4">
+
+            <!-- Riffle -->
+            <div id="riffle">
+                
+                <!-- Cards -->
+                <div class="row container">
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- AWP -->
+            <div id="awp">
+                
+                <!-- Cards -->
+                <div class="row container">
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- Pistola -->
+            <div id="pistola">Test 3</div>
+            <!-- Knife -->
+            <div id="knife">Test 3</div>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer blue-grey darken-4">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">CS Store</h5>
+              <p class="grey-text text-lighten-4">Feito por Luísa Moreira e Nathália Campos</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-copyright">
+          <div class="container">© 2014 Copyright Text</div>
+        </div>
+    </footer>
+
+        
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="js/materialize.js"></script>
+
+    <script>  
+        // Inicialização do menu mobile
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
         });
-
-        function novo() {
-            limparCampos();
-        }
-
-        /** Aqui vamos preencher os
-        campos do formulário com os dados
-        da linha selecionada */
-        function editar(id) {
-            $.ajax({
-                url: ws + '/buscarPorId/' + id,
-                dataType: 'json',
-                success: function(data) {
-                    /** O seletor $("#carne") serve
-                    para indicar para o jQuery que estamos
-                    buscando um campo com id='carne'.
-                    O # denota que estamos buscando pelo id
-                    da tag html. A função val() será utilizada
-                    para atribuir um valor para o campo. */
-                    $("#id").val(data[0].id);
-                    $("#carne").val(data[0].carne);
-                    $("#peso").val(data[0].peso);
-                }
-            });
-        }
-
-        function salvar() {
-            /** Montando um objeto 'churrasco'
-            com os dados submetidos do formulário */
-            var churrasco = {
-                id: $("#id").val(),
-                carne: $("#carne").val(),
-                peso: $("#peso").val()
-            }
-
-            if(churrasco.id != undefined && churrasco.id != '') { //Se nosso objeto tiver id, faremos um update
-                $.ajax({
-                    url: ws + '/atualizar',
-                    type: "POST",
-                    dataType: 'json',
-                    data: {
-                        id: churrasco.id,
-                        carne: churrasco.carne,
-                        peso: churrasco.peso
-                    },
-                    success: function(data) {
-                        /** Após o sucesso na atualização,
-                        * busco todos os registros
-                        * e populo novamente a tabela
-                        **/
-                        listar();
-
-                        /** Limpando campos do form */
-                        limparCampos();
-                    }
-                });
-            } else { //Caso contrário faremos um insert
-                $.ajax({
-                    url: ws + '/inserir',
-                    type: "POST",
-                    dataType: 'json',
-                    data: {
-                        carne: churrasco.carne,
-                        peso: churrasco.peso
-                    },
-                    success: function(data) {
-                        /** Após o sucesso na inserção,
-                        * busco todos os registros
-                        * e populo novamente a tabela
-                        **/
-                        listar();
-
-                        /** Limpando campos do form */
-                        limparCampos();
-                    }
-                });
-            }
-        }
-
-        //TODO: escrever o método de salvar
-
-        function remover(id) {
-            $.ajax({
-                url: ws + '/remover',
-                type: "POST",
-                dataType: 'json',
-                data: {
-                    id: id
-                },
-                success: function(data) {
-                    /** Após o sucesso na remoção,
-                    * busco todos os registros
-                    * e populo novamente a tabela
-                    **/
-                    listar();
-                }
-            });
-        }
-
-        function listar() {
-            $.ajax({
-                url: ws + '/buscarTodos',
-                dataType: 'json',
-                success: function(data) {
-                    populateTable(data);
-                }
-            });
-        }
-
-        function populateTable(data) {
-            /** O seletor $("#lista-carne > tbody") detona que
-            estaremos selecionando o tbody da table com id='lista-carne'.
-            A função empty() servirá para excluir todas as rows que essa
-            table venha a possuir.
-            A função append() servirá para para incluir o conteúdo passado
-            como parâmetro no tbody da 'lista-carne' */
-            $("#lista-carne > tbody").empty(); //Limpo a <table> antes de popular
-            $.each(data, function() {
-                $("#lista-carne > tbody").append(`<tr>` +
-                    `<td>` + this.id + `</td>` +
-                    `<td><b>` + this.carne + `</b></td>` +
-                    `<td>` + this.peso + `kg</td>` +
-                    `<td><a onclick="editar(` + this.id + `)"><img class="responsive-img lista-img" src="img/edit.png"/></a></td>` +
-                    `<td><a onclick="remover(` + this.id + `)"><img class="responsive-img lista-img" src="img/remove.png"/></a></td>` +
-                    `</tr>`);
-            })
-        }
-
-        function limparCampos() {
-            /** Aqui estamos limpando todos os campos do form */
-            $("#id").val('');
-            $("#carne").val('');
-            $("#peso").val('');
-        }
     </script>
+
+    <script>
+        //Tabs
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+    </script>
+
+    <script>
+        // Parallax
+        $(document).ready(function(){
+            $('.parallax').parallax();
+        });
+    </script>
+
+</body>
+    
 </html>

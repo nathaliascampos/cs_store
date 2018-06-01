@@ -5,3 +5,40 @@ header {
 table img {
     width: 30px;
 }
+
+body {
+    font-family: "Lato", Arial, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.7;
+    color: #777;
+    background: #ffffff;
+  }
+  
+/*  */
+  nav .brand-logo{
+    color: #000000;
+  }
+
+  nav ul a{
+    color: #000000;
+  }
+
+  .tabs .tab a{
+    color: #000000;
+  }
+
+  .tabs .tab a:hover{
+    color: #000000;
+  }
+
+  .tabs .tab a:focus.active{
+    background-color: #eceff1;
+  }
+
+  @media only screen and (min-width: 993px) {
+    .container {
+      width: 90%;
+    }
+  }
+
