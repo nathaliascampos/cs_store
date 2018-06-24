@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+        <title>
+            CS STORE
+        </title>
+    </meta>
+
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <!-- Materialize CSS -->
+    <link rel="stylesheet" href="css/materialize.css"> </link>
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="css/style.css"> </link>
+
+    <style>
+        body {
+            background-image: url("http://wallsdesk.com/wp-content/uploads/2016/08/Counter-Strike-Global-Offensive-Computer-Wallpaper.jpg");
+            /* background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed; */
+        }
+    </style>
+        
+    
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo hide-on-med-and-down"> 
+                <img src="images/logo2.png"  width="85" height="60" alt="" />  
+            </a>
+            <a href="index.html" class="brand-logo center">CS Store</a>
+            <!-- Add menu mobile -->
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down text-blue-grey">
+                <li><a href="money.html">Add money</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav> 
+    
+    <!-- Add componentes do menu mobile -->
+    <ul id="mobile-demo" class="sidenav">
+        <li><a href="money.html">Add money</a></li>
+        <li><a href="login.html">Login</a></li>
+    </ul> 
+
+    <div class="row container">
+        <!-- <div class="card"> -->
+            <div class="input-field col s6">
+                <input id="user" type="text">
+                <label for="user">Login</label>
+            </div>
+            <div class="input-field col s6">
+                <input id="password" type="password">
+                <label for="password">Senha</label>
+            </div>
+            
+            <a href="index.html" class="waves-effect waves-light btn-large center">Enter</a>
+
+        <!-- </div> -->
+    </div>
+
+    <!-- Footer -->
+    <footer class="page-footer">
+        <div class="container">
+          <div class="row">
+            <div class="col l6 s12">
+              <h5 class="white-text">CS Store</h5>
+              <p class="grey-text text-lighten-4">Feito por Luísa Moreira e Nathália Campos</p>
+            </div>
+          </div>
+        </div>
+        
+        <div class="footer-copyright">
+          <div class="container">© 2014 Copyright Text</div>
+        </div>
+    </footer>
+
+
+        
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script> 
+        <!--JavaScript at end of body for optimized loading-->
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+    <!-- Materialize JS -->
+    <script src="js/materialize.js"></script>
+
+    <script>  
+        // Inicialização do menu mobile
+        $(document).ready(function(){
+            $('.sidenav').sidenav();
+        });
+    </script>
+
+    <script>
+        //Tabs
+        $(document).ready(function(){
+            $('.tabs').tabs();
+        });
+    </script>
+
+    <script>
+        // Parallax
+        $(document).ready(function(){
+            $('.parallax').parallax();
+        });
+    </script>
+
+</body>
+    
+</html>
