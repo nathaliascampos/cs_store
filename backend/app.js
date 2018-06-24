@@ -7,7 +7,7 @@ var objConn = {
     host: 'localhost',
     user: 'root',
     password: '',
-    database: 'skin_cs'
+    database: 'mydb'
 }
 
 var port = process.env.PORT || 5000; 
@@ -15,6 +15,7 @@ var port = process.env.PORT || 5000;
 //      API REST PELO EXPRESS:
 
 var user = express.Router();
+var skin = express.Router();
 
 //INSERIR USER
 user.post('/inserir', function(req, res){
@@ -63,12 +64,12 @@ user.post('/atualizar', function(req, res) {
     connection.end();
 });
 
-//LISTAR TODOS USERS
+//LISTAR TODOS USERS ok
 user.get('/listarTodos', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
 
-    var strQuery = "SELECT id, login, senha FROM user";
+    var strQuery = "SELECT idUser, login, senha FROM user";
 
     console.log(strQuery);
 
@@ -131,6 +132,29 @@ user.post('/remover', function(req, res) {
 
 app.use('/user', user);
 
+//Skin....
+//Listar todas as skins
+skin.get('/listarTodos', function(req, res) {
+    var connection = mysql.createConnection(objConn);
+    connection.connect();
+
+    var strQuery = "SELECT idSkin, nome, nome_skin, tipo, preco,  FROM skin";
+
+    console.log(strQuery);
+
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+        	res.jsonp(rows);
+        } else {
+        	res.jsonp(err);
+        }
+    });
+
+    connection.end();
+});
+
+app.use('/skin', skin);
+//
 app.listen(port);
 console.log('Iniciando a aplicação na porta ' + port);
 

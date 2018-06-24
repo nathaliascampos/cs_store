@@ -9,9 +9,17 @@
 
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js"></script>
+      
     <!--Import materialize.css-->
     <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-        <!--Let browser know website is optimized for mobile-->
+
+    <!--Let browser know website is optimized for mobile ????-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 
@@ -19,69 +27,43 @@
     <link rel="stylesheet" href="css/materialize.css"> </link>
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css"> </link>
-    
+
+    <style>
+        body {
+            background-image: url("http://wallsdesk.com/wp-content/uploads/2016/08/Counter-Strike-Global-Offensive-Computer-Wallpaper.jpg");
+            /* background-repeat: no-repeat;
+            background-position: right top;
+            background-attachment: fixed; */
+        }
+    </style>
+        
 </head>
 
 <body>
         
-    <!-- <div class="row">
-    <div class="col s12 ">
-        <div class="card-panel blue-grey darken-1 white-text">Olá Mundo</div>
-    </div>
-    </div> -->
-
     <!-- Navbar -->
-    <!-- <div class="navfixed"> -->
-        <nav class="transparent">
-            <div class="nav-wrapper container">
-                <a href="index.html" class="brand-logo"> 
-                    <img src="images/logo2.jpg"  width="85" height="60" alt="" />  
-                </a>
-                <a href="index.html" class="brand-logo center">CS Store</a>
-                <!-- Add menu mobile -->
-                <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
-                    <i class="material-icons">menu</i>
-                </a>
-                <ul id="nav-mobile" class="right hide-on-med-and-down text-blue-grey">
-                    <li><a href="money.html">Add money</a></li>
-                    <li><a href="steam.html">Steam</a></li>
-                    <li><a href="login.html">Login</a></li>
-                </ul>
-            </div>
-            
-        </nav> 
-    <!-- </div> -->
+    <nav class="">
+        <div class="nav-wrapper container">
+            <a href="index.html" class="brand-logo hide-on-med-and-down"> 
+                <img src="images/logo2.png"  width="85" height="60" alt="" />  
+            </a>
+            <a href="index.html" class="brand-logo center">CS Store</a>
+            <!-- Add menu mobile -->
+            <a href="#" data-target="mobile-demo" class="sidenav-trigger right">
+                <i class="material-icons">menu</i>
+            </a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down text-blue-grey">
+                <li><a href="money.html">Add money</a></li>
+                <li><a href="login.html">Login</a></li>
+            </ul>
+        </div>
+    </nav> 
 
     <!-- Add componentes do menu mobile -->
     <ul id="mobile-demo" class="sidenav">
         <li><a href="money.html">Add money</a></li>
-        <li><a href="steam.html">Steam</a></li>
         <li><a href="login.html">Login</a></li>
     </ul> 
-
-    <!-- <div id="index-banner" class="parallax-container">
-        <div class="section no-pad-bot">
-            <div class="container">
-                <br><br>
-                <h1 class="header center teal-text text-lighten-2">Buy the best skins</h1>
-                <div class="row center">
-                    <h5 class="header col s12 light">Click to login</h5>
-                </div>
-                <div class="row center">
-                    <a href="login" id="download-button" class="btn-large waves-effect waves-light teal lighten-1">Login</a>
-                </div>
-                <br><br>
-        
-            </div>
-        </div>
-        <div class="parallax"><img src="images/csgo3.jpg" alt="Unsplashed background img 1"></div>
-    </div> -->
-    
-
-    <!-- Parallax -->
-    <div class="parallax-container">
-        <div class="parallax"><img src="images/csgo2.jpg"></div>
-    </div>
 
     <!-- Card com tabs-->
     <div class="row container ">
@@ -91,7 +73,8 @@
             </div>
             <div class="card-tabs">
                 <ul class="tabs tabs-fixed-width ">
-                    <li class="tab"><a class="active" href="#riffle">Riffle</a></li>
+                    <li class="tab"><a class="active" href="#all">All</a></li>
+                    <li class="tab"><a href="#riffle">Riffle</a></li>
                     <li class="tab"><a href="#awp">AWP</a></li>
                     <li class="tab"><a href="#pistola">Pistol</a></li>
                     <li class="tab"><a href="#knife">Knife</a></li>
@@ -100,23 +83,124 @@
 
             <div class="card-content grey lighten-4">
 
+            <!-- All -->
+            <div id="all">
+            
+                <!-- Cards -->
+                <div class="row container">
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col s12 m4 l3">
+                            <div class="card hoverable">
+                                <div class="card-image">
+                                    <img src="images/M4A4.png">
+                                </div>
+                                <div class="card-content center">
+                                    <span class="card-title">M4A4 | (Dragon King)</span>
+                                    <p>R$25,00</p>
+                                    <a class=" waves-effect waves-light btn">Buy</a>
+                                </div>
+                            </div>
+                        </div>
+    
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- Fim do row container -->
+            </div>
+
             <!-- Riffle -->
             <div id="riffle">
                 
                 <!-- Cards -->
                 <div class="row container">
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
 
                     <div class="col s12 m4 l3">
                         <div class="card hoverable">
@@ -156,8 +240,21 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
+                    <div class="col s12 m4 l3">
+                        <div class="card hoverable">
+                            <div class="card-image">
+                                <img src="images/M4A4.png">
+                            </div>
+                            <div class="card-content center">
+                                <span class="card-title">M4A4 | (Dragon King)</span>
+                                <p>R$25,00</p>
+                                <a class=" waves-effect waves-light btn">Buy</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div> <!-- Fim do row container -->
             </div>
 
             <!-- AWP -->
@@ -229,7 +326,7 @@
     </div>
 
     <!-- Footer -->
-    <footer class="page-footer blue-grey darken-4">
+    <footer class="page-footer">
         <div class="container">
           <div class="row">
             <div class="col l6 s12">
@@ -272,6 +369,46 @@
             $('.parallax').parallax();
         });
     </script>
+
+    <!-- <script>
+        // Banco de Dados
+        var ws: 'http://localhost:5000/skin';
+
+         $(document).ready(function() {
+            listar();
+        });
+
+        //All
+        function listar(){
+            $.ajax({
+                url: ws + '/listarTodos',
+                dataType:'json',
+                success: function(data){
+                    populareTable(data);
+                }
+            })
+        }
+
+        function populareTable(data){
+
+        }
+
+        // Riffle
+        function listarportipo(tipo){
+            $ajax({
+                url: ws + /listarportipo/' + tipo,
+                dataType: 'json',
+                success: function(data) {
+                    $(#riffle).val(data[0].tipo);
+                }
+            })
+        }
+
+        function comprar(){
+
+        }
+
+    </script> -->
 
 </body>
     

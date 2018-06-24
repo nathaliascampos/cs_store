@@ -13,32 +13,46 @@ body {
     line-height: 1.7;
     color: #777;
     background: #ffffff;
+    
   }
-  
+
+nav{
+  background-color: #b8c1c57a;
+}
+
+.page-footer{
+  background-color: #b8c1c536;
+}
+
+/* ??? */
+.tabs .tab a:focus.active{
+  background-color: #eceff1;
+}
+
 /*  */
-  nav .brand-logo{
-    color: #000000;
-  }
+nav .brand-logo{
+  color: #000000;
+}
 
-  nav ul a{
-    color: #000000;
-  }
+nav ul a{
+  color: #000000;
+}
 
-  .tabs .tab a{
-    color: #000000;
-  }
+.tabs .tab a{
+  color: #000000;
+}
 
-  .tabs .tab a:hover{
-    color: #000000;
-  }
+.tabs .tab a:hover{
+  color: #000000;
+}
 
-  .tabs .tab a:focus.active{
-    background-color: #eceff1;
+@media only screen and (min-width: 993px) {
+  .container {
+    width: 90%;
   }
+}
 
-  @media only screen and (min-width: 993px) {
-    .container {
-      width: 90%;
-    }
-  }
+.page-footer{
+  background-color: #b8c1c57a;
+}
 
