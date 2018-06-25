@@ -1,5 +1,7 @@
 var express = require('express');
+var cors = require('cors'); //new
 var app = express();
+var bodyParser = require('body-parser'); //new
 var mysql = require('mysql');
 
 //Configuração do BD
@@ -10,15 +12,20 @@ var objConn = {
     database: 'mydb'
 }
 
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 var port = process.env.PORT || 5000; 
 
-//      API REST PELO EXPRESS:
-
+// API REST PELO EXPRESS:
 var user = express.Router();
 var skin = express.Router();
 
-//INSERIR USER
-user.post('/inserir', function(req, res){
+// ----USER----
+
+//ENTRAR COM O USER nao vai ter
+user.post('/entrar', function(req, res){
     var login = req.body.login;
     var senha = req.body.senha;
 
@@ -39,7 +46,7 @@ user.post('/inserir', function(req, res){
     connection.end();
 });
 
-//ATUALIZAR USER
+//ATUALIZAR USER nao vai ter
 user.post('/atualizar', function(req, res) {
     var id = req.body.id;
     var login = req.body.login;
@@ -64,7 +71,7 @@ user.post('/atualizar', function(req, res) {
     connection.end();
 });
 
-//LISTAR TODOS USERS ok
+// LISTAR TODOS USERS não vai ter
 user.get('/listarTodos', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
@@ -84,7 +91,31 @@ user.get('/listarTodos', function(req, res) {
     connection.end();
 });
 
-//BUSCAR USER POR ID:
+//Login user
+user.post('/loginUser', function(req, res) {
+    var loginUser = req.body.login;
+    var senhaUser = req.body.senha;
+
+    var connection = mysql.createConnection(objConn);
+    connection.connect();
+
+    var strQuery = "SELECT * FROM user WHERE login = '" +  loginUser + "' AND senha = '" + senhaUser + "' ";
+
+    console.log(strQuery);
+
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+        	res.jsonp(rows);
+        } else {
+        	res.jsonp(err);
+        }
+    });
+
+    connection.end();
+});
+
+
+//BUSCAR USER POR ID: vai ter
 user.get('/buscarPorId/:id', function(req, res) {
     var id = req.params.id; //Aqui pegamos o ID como parâmetro, pois método GET não tem Body
 
@@ -107,32 +138,31 @@ user.get('/buscarPorId/:id', function(req, res) {
     connection.end();
 })
 
-//REMOVER USER:
-user.post('/remover', function(req, res) {
-    var id = req.body.id;
+//REMOVER USER: não vai ter
+// user.post('/remover', function(req, res) {
+//     var id = req.body.id;
 
-    var connection = mysql.createConnection(objConn);
+//     var connection = mysql.createConnection(objConn);
 
-    connection.connect();
+//     connection.connect();
 
-    var strQuery = "DELETE FROM user WHERE id = " + id;
+//     var strQuery = "DELETE FROM user WHERE id = " + id;
 
-    console.log(strQuery);
+//     console.log(strQuery);
 
-    connection.query(strQuery, function(err, rows, fields) {
-        if (!err) {
-            res.jsonp(rows);
-        } else {
-            res.jsonp(err);
-        }
-    });
+//     connection.query(strQuery, function(err, rows, fields) {
+//         if (!err) {
+//             res.jsonp(rows);
+//         } else {
+//             res.jsonp(err);
+//         }
+//     });
 
-    connection.end();
-});
+//     connection.end();
+// });
 
-app.use('/user', user);
+//  ----SKIN----
 
-//Skin....
 //Listar todas as skins
 skin.get('/listarTodos', function(req, res) {
     var connection = mysql.createConnection(objConn);
@@ -153,27 +183,36 @@ skin.get('/listarTodos', function(req, res) {
     connection.end();
 });
 
-// skin.get('/listarRiffle', function(req, res) {
-//     var connection = mysql.createConnection(objConn);
-//     connection.connect();
+//Listar Skins do tipo Riffle
+skin.get('/listarRifle', function(req, res) {
+    var tipo_skin = "Rifle";
 
-//     var strQuery = "SELECT idSkin, nome, nome_skin, tipo, preco,  FROM skin";
+    var connection = mysql.createConnection(objConn);
+    connection.connect();
 
-//     console.log(strQuery);
+    var strQuery = "SELECT nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
 
-//     connection.query(strQuery, function(err, rows, fields) {
-//         if (!err) {
-//         	res.jsonp(rows);
-//         } else {
-//         	res.jsonp(err);
-//         }
-//     });
+    console.log(strQuery);
 
-//     connection.end();
-// });
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+        	res.jsonp(rows);
+        } else {
+        	res.jsonp(err);
+        }
+    });
 
+    connection.end();
+});
+
+//Listar Skins do tipo AWP
+
+//Listar Skins do tipo Pistol
+
+
+app.use('/user', user);
 app.use('/skin', skin);
-//
+
 app.listen(port);
 console.log('Iniciando a aplicação na porta ' + port);
 
