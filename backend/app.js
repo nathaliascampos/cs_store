@@ -138,7 +138,7 @@ skin.get('/listarTodos', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
 
-    var strQuery = "SELECT idSkin, nome, nome_skin, tipo, preco,  FROM skin";
+    var strQuery = "SELECT idSkin, nome, nome_skin, tipo, preco FROM skin";
 
     console.log(strQuery);
 
@@ -152,6 +152,25 @@ skin.get('/listarTodos', function(req, res) {
 
     connection.end();
 });
+
+// skin.get('/listarRiffle', function(req, res) {
+//     var connection = mysql.createConnection(objConn);
+//     connection.connect();
+
+//     var strQuery = "SELECT idSkin, nome, nome_skin, tipo, preco,  FROM skin";
+
+//     console.log(strQuery);
+
+//     connection.query(strQuery, function(err, rows, fields) {
+//         if (!err) {
+//         	res.jsonp(rows);
+//         } else {
+//         	res.jsonp(err);
+//         }
+//     });
+
+//     connection.end();
+// });
 
 app.use('/skin', skin);
 //
