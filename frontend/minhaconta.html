@@ -59,20 +59,10 @@
         <li><a href="minhaconta.html">Minha Conta</a></li>
         <li><a href="money.html">Add money</a></li>
     </ul> 
-
-    <div class="row container">
-        <div class="card">
-            <div class="input-field col s6">
-                <input id="user" type="text">
-                <label for="user">Login</label>
-            </div>
-            <div class="input-field col s6">
-                <input id="password" type="password">
-                <label for="password">Senha</label>
-            </div>
-            
-            <a class="waves-effect waves-light btn-large center" onclick="login_user()" >Enter</a>
-
+    
+    <div class="container">
+        <div class="card-panel">
+            <p> Textooo!</p>
         </div>
     </div>
 
@@ -120,60 +110,6 @@
         $(document).ready(function(){
             $('.parallax').parallax();
         });
-    </script>
-
-    <script>
-
-        // var ws = 'http://localhost:5000/user';
-    
-        // Botao enter
-        function login_user(){
-
-            var enter = {
-                login : $("#login").val(),
-                senha : $("#senha").val()
-            }
-
-            $.ajax({
-                url: 'http://localhost:5000/user/listarTodos',
-                type: 'POST',
-                dataType: 'jsonp',
-                data: {
-                    login: enter.login,
-                    senha: enter.senha
-                }
-                success: function (data){
-                    alert("Ok");
-                }
-                error: function (data) {
-                    alert("Erro na requisição Ajax");
-                }
-                // alert("Ok");
-            })
-            
-
-            // $.ajax({
-            //     type: "GET",
-            //     // url: ws + '/listarTodos',
-            //     url = 'http://localhost:5000/user/listarTodos',
-            //     dataType = 'jsonp',
-            //     success: function (data){
-            //         alert("Ok");
-            //     },
-            //     error: function (data) {
-            //         alert("Erro na requisição Ajax");
-            //     }
-                     
-            // })
-            // alert("Ok")
-
-            // var skin = {
-            //     user: $('user').val(),
-            //     password: $('password').val()
-            // }
-        }
-
-
     </script>
 
 </body>

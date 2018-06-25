@@ -56,16 +56,20 @@
                 <i class="material-icons">menu</i>
             </a>
             <ul id="nav-mobile" class="right hide-on-med-and-down text-blue-grey">
-                <li><a href="money.html">Add money</a></li>
+                
                 <li><a href="login.html">Login</a></li>
+                <li><a href="minhaconta.html">Minha Conta</a></li>
+                <li><a href="money.html">Add money</a></li>
+
             </ul>
         </div>
     </nav> 
 
     <!-- Add componentes do menu mobile -->
     <ul id="mobile-demo" class="sidenav">
-        <li><a href="money.html">Add money</a></li>
         <li><a href="login.html">Login</a></li>
+        <li><a href="minhaconta.html">Minha Conta</a></li>
+        <li><a href="money.html">Add money</a></li>
     </ul> 
 
     <!-- Card com tabs-->
@@ -210,9 +214,9 @@
                             <div class="card-image">
                                 <img src="images/M4A4.png">
                             </div>
+                            <div class="card-content center" id="listaRifle"> <!-- ... no ajax --> </div>
+
                             <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
                                 <a class=" waves-effect waves-light btn">Buy</a>
                             </div>
                         </div>
@@ -244,18 +248,6 @@
                         </div>
                     </div>
 
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
 
                 </div> <!-- Fim do row container -->
             </div>
@@ -377,36 +369,64 @@
 
     <script type="text/javascript">
 
-        // var ws = 'http://localhost:5000/skin';
+        var ws = 'http://localhost:5000/skin';
 
         $(document).ready(function() {
                 listarTodos();
-            })
+        })
 
         function listarTodos(){
-            // $.ajax({
-            //     url: ws + '/listarTodos' ,
-            //     dataType:'json',
-            //     success: function(data) {
-            //         alert("working");
-            //     }
-            // })
-
             $.ajax({
                 type: 'GET',
-                url: 'http://localhost:5000/skin/listarTodos',
-                dataType:'json',
+                url: ws + '/listarTodos',
+                dataType:'jsonp',
                 success: function (data) {
-                    $.each(data, function(){
-                        alert("this.id");
-                    }
-                },
-                // error: function (data) {
-                //     alert("Erro na requisição Ajax");
-                // }
-            });
-		    alert("Skin: " + skin[1].nome);
+                    // alert("Skin de todos tipos!");
 
+                    // skinn = data;
+                    // alert("Hi "+ skinn[1].nome);
+
+                    // $.each(data, function(){
+                    //     alert(this.id);
+                    // }
+                },
+                error: function (data) {
+                    alert("Erro na requisição Ajax");
+                }
+            });
+        }
+
+        function listarRiffle(){
+            //alert("Riffles!"); //remover
+            $.ajax({
+                type: 'GET',
+                url: ws + '/listarRifle',
+                dataType:'jsonp',
+                success: function (data) {
+                    // alert("Skin do tipo Riffle");
+
+                    infos = data;
+                    var i = 0;
+
+                    $.each(data, function(){
+                        $("#listaRifle").html(
+                            '<span class="card-title" > ' + infos[i].nome_skin +  ' </span>' + 
+                            '<p> R$' + infos[i].preco + ',00 </p>'
+                        );
+                        i = i + 1;
+                    })
+
+                    // $("#listaRifle").html(
+                    //     '<span class="card-title" > ' + infos[i].nome_skin +  ' </span>' + 
+                    //     '<p> R$' + infos[i].preco + ',00 </p>'
+                    // );
+                    
+                },
+                error: function (data) {
+                    alert("Erro na requisição Ajax");
+                }
+            });
+        
         }
 
         function buy(){
@@ -422,23 +442,9 @@
             // }) 
         }
 
-
-
-        // function listarRiffle(){
-        //     //alert("Riffles!"); //remover
-
-        //     url: ws + '/listarTodos',
-        //     //type: 'GET',
-        //     dataType:'json',
-            
-        //     success: function(data){
-        //         //...
-        //         alert("Todas skins");
-        //     }
-        // }
-
-    
     </script>
+
+
 
     <!-- <script>
         // Banco de Dados
@@ -481,5 +487,4 @@
     </script> -->
 
 
-    
 </html>
