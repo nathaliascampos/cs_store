@@ -75,246 +75,62 @@
     <!-- Card com tabs-->
     <div class="row container ">
         <div class="card">
+            
             <div class="card-content">
-                <p class="center">Choose your skin</p>
+                    <p class="center">Choose your skin</p>
             </div>
+
             <div class="card-tabs">
-                <ul class="tabs tabs-fixed-width ">
-                    <li class="tab" onclick="listarTodos()"><a class="active" href="#all">All</a></li>
-                    <li class="tab" onclick="listarRiffle()"><a href="#riffle">Riffle</a></li>
-                    <li class="tab"><a href="#awp">AWP</a></li>
-                    <li class="tab"><a href="#pistola">Pistol</a></li>
-                    <li class="tab"><a href="#knife">Knife</a></li>
-                </ul>
+                    <ul class="tabs tabs-fixed-width ">
+                        <li class="tab" onclick="listarTodos()"><a class="active" href="#all">All</a></li>
+                        <li class="tab" onclick="listarRifle()"><a href="#riffle">Riffle</a></li>
+                        <li class="tab" onclick="listarAWP()"><a href="#awp">AWP</a></li>
+                        <li class="tab" onclick="listarPistol()"><a href="#pistola">Pistol</a></li>
+                        <li class="tab" onclick="listarKnife()"><a href="#knife">Knife</a></li>
+                    </ul>
             </div>
 
             <div class="card-content grey lighten-4">
 
-            <!-- All -->
-            <div id="all">
-            
-                <!-- Cards -->
-                <div class="row container">
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col s12 m4 l3">
-                            <div class="card hoverable">
-                                <div class="card-image">
-                                    <img src="images/M4A4.png">
-                                </div>
-                                <div class="card-content center">
-                                    <span class="card-title">M4A4 | (Dragon King)</span>
-                                    <p>R$25,00</p>
-                                    <a class=" waves-effect waves-light btn">Buy</a>
-                                </div>
-                            </div>
-                        </div>
-    
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div> <!-- Fim do row container -->
-            </div>
-
-            <!-- Riffle -->
-            <div id="riffle">
-                
-                <!-- Cards -->
-                <div class="row container">
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center" id="listaRifle"> <!-- ... no ajax --> </div>
-
-                            <div class="card-content center">
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-
-                </div> <!-- Fim do row container -->
-            </div>
-
-            <!-- AWP -->
-            <div id="awp">
-                
-                <!-- Cards -->
-                <div class="row container">
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col s12 m4 l3">
-                        <div class="card hoverable">
-                            <div class="card-image">
-                                <img src="images/M4A4.png">
-                            </div>
-                            <div class="card-content center">
-                                <span class="card-title">M4A4 | (Dragon King)</span>
-                                <p>R$25,00</p>
-                                <a class=" waves-effect waves-light btn">Buy</a>
-                            </div>
-                        </div>
-                    </div>
+                <!-- All -->
+                <div id="all">
+                        <!-- Cards -->
+                        <div class="row container">
+                            <div id="listaAll"> </div>
+                        </div> 
                 </div>
 
-            </div>
-            <!-- Pistola -->
-            <div id="pistola">Test 3</div>
-            <!-- Knife -->
-            <div id="knife">Test 3</div>
+                <!-- Riffle -->
+                <div id="riffle">
+                        <!-- Cards -->
+                        <div class="row container">
+                            <div id="listaRifle"> </div>
+                        </div>
+                </div>
+
+                <!-- AWP -->
+                <div id="awp">
+                        <!-- Cards -->
+                        <div class="row container">
+                            <div id="listaAWP"> </div>
+                        </div>
+                </div>
+
+                <!-- Pistola -->
+                <div id="pistola">
+                        <!-- Cards -->
+                        <div class="row container">
+                            <div id="listaPistol"> </div>
+                        </div>
+                </div>
+
+                <!-- Knife -->
+                <div id="knife">
+                        <!-- Cards -->
+                        <div class="row container">
+                            <div id="listaKnife"> </div>
+                        </div>
+                </div>
             </div>
             
         </div>
@@ -381,110 +197,199 @@
                 url: ws + '/listarTodos',
                 dataType:'jsonp',
                 success: function (data) {
-                    // alert("Skin de todos tipos!");
+                    
+                    infos = data;
+                    $("#listaAll").empty();
 
-                    // skinn = data;
-                    // alert("Hi "+ skinn[1].nome);
+                    $.each(data, function(){
 
-                    // $.each(data, function(){
-                    //     alert(this.id);
-                    // }
+                        $("#listaAll").append(
+                            '<div class="col s12 m4 l3">'+
+                                '<div class="card hoverable">'+
+                                    '<div class="card-image">'+
+                                        '<img src="images/' + this.idSkin + '.png">'+
+                                    '</div>'+
+                                    '<div class="card-content center">'+
+                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                        '<p> R$' + this.preco + ',00 </p>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'
+                        );
+
+                    })
                 },
                 error: function (data) {
                     alert("Erro na requisição Ajax");
                 }
             });
-        }
+        } // fim function listarTodos()
 
-        function listarRiffle(){
-            //alert("Riffles!"); //remover
+        function listarRifle(){
             $.ajax({
                 type: 'GET',
                 url: ws + '/listarRifle',
                 dataType:'jsonp',
                 success: function (data) {
-                    // alert("Skin do tipo Riffle");
-
+                    
                     infos = data;
-                    var i = 0;
+                    $("#listaRifle").empty();
 
                     $.each(data, function(){
-                        $("#listaRifle").html(
-                            '<span class="card-title" > ' + infos[i].nome_skin +  ' </span>' + 
-                            '<p> R$' + infos[i].preco + ',00 </p>'
-                        );
-                        i = i + 1;
-                    })
 
-                    // $("#listaRifle").html(
-                    //     '<span class="card-title" > ' + infos[i].nome_skin +  ' </span>' + 
-                    //     '<p> R$' + infos[i].preco + ',00 </p>'
-                    // );
-                    
+                        $("#listaRifle").append(
+                            '<div class="col s12 m4 l3">'+
+                                '<div class="card hoverable">'+
+                                    '<div class="card-image">'+
+                                        '<img src="images/' + this.idSkin + '.png">'+
+                                    '</div>'+
+                                    '<div class="card-content center">'+
+                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                        '<p> R$' + this.preco + ',00 </p>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'
+                        );
+
+                    })
                 },
                 error: function (data) {
                     alert("Erro na requisição Ajax");
                 }
             });
-        
-        }
+        } // fim function listarRifle()
+
+        function listarAWP(){
+            $.ajax({
+                type: 'GET',
+                url: ws + '/listarAWP',
+                dataType:'jsonp',
+                success: function (data) {
+                    
+                    infos = data;
+                    $("#listaAWP").empty();
+
+                    $.each(data, function(){
+
+                        $("#listaAWP").append(
+                            '<div class="col s12 m4 l3">'+
+                                '<div class="card hoverable">'+
+                                    '<div class="card-image">'+
+                                        '<img src="images/' + this.idSkin + '.png">'+
+                                    '</div>'+
+                                    '<div class="card-content center">'+
+                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                        '<p> R$' + this.preco + ',00 </p>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'
+                        );
+
+                    })
+                },
+                error: function (data) {
+                    alert("Erro na requisição Ajax");
+                }
+            });
+        } // fim function listarAWP()
+
+        function listarPistol(){
+            $.ajax({
+                type: 'GET',
+                url: ws + '/listarPistol',
+                dataType:'jsonp',
+                success: function (data) {
+                    
+                    infos = data;
+                    $("#listaPistol").empty();
+
+                    $.each(data, function(){
+
+                        $("#listaPistol").append(
+                            '<div class="col s12 m4 l3">'+
+                                '<div class="card hoverable">'+
+                                    '<div class="card-image">'+
+                                        '<img src="images/' + this.idSkin + '.png">'+
+                                    '</div>'+
+                                    '<div class="card-content center">'+
+                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                        '<p> R$' + this.preco + ',00 </p>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'
+                        );
+
+                    })
+                },
+                error: function (data) {
+                    alert("Erro na requisição Ajax");
+                }
+            });
+        } // fim function listarPistol()
+
+        function listarKnife(){
+            $.ajax({
+                type: 'GET',
+                url: ws + '/listarKnife',
+                dataType:'jsonp',
+                success: function (data) {
+                    
+                    infos = data;
+                    $("#listaKnife").empty();
+
+                    $.each(data, function(){
+
+                        $("#listaKnife").append(
+                            '<div class="col s12 m4 l3">'+
+                                '<div class="card hoverable">'+
+                                    '<div class="card-image">'+
+                                        '<img src="images/' + this.idSkin + '.png">'+
+                                    '</div>'+
+                                    '<div class="card-content center">'+
+                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                        '<p> R$' + this.preco + ',00 </p>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                    '</div>'+
+                                '</div>'+
+                            '</div>'
+                        );
+
+                    })
+                },
+                error: function (data) {
+                    alert("Erro na requisição Ajax");
+                }
+            });
+        } // fim function listarKnife()
 
         function buy(){
-            alert("Skin comprada!"); //remover
-            // $.ajax({
-            //     //api...
-            //     success: function (data){
-            //         alert("Skin comprada!");
-            //     }
-            //     error: function (data) {
-            //         alert("Erro ao comprar a skin. Tente novamente!");
-            //     }
-            // }) 
+
+            decisao = confirm("Tem certeza que deseja comprar essa skin?");
+                if (decisao){
+                    alert("Skin comprada!"); 
+                } 
+
+            $.ajax({
+                url: ws + '/buySkin',
+                type: "POST",
+                dataType: 'jsonp',
+                data: {
+                    //entrar em duas tabelas
+                    id: idSkin
+                },
+                success: function(data) {
+                    alert("Skin comprada!"); //remover
+                },
+                error: function (data) {
+                    alert("Erro na requisição Ajax");
+                }
+            });
         }
 
     </script>
-
-
-
-    <!-- <script>
-        // Banco de Dados
-        var ws: 'http://localhost:5000/skin';
-
-         $(document).ready(function() {
-            listar();
-        });
-
-        //All
-        function listar(){
-            $.ajax({
-                url: ws + '/listarTodos',
-                dataType:'json',
-                success: function(data){
-                    populareTable(data);
-                }
-            })
-        }
-
-        function populareTable(data){
-
-        }
-
-        // Riffle
-        function listarportipo(tipo){
-            $ajax({
-                url: ws + /listarportipo/' + tipo,
-                dataType: 'json',
-                success: function(data) {
-                    $(#riffle).val(data[0].tipo);
-                }
-            })
-        }
-
-        function comprar(){
-
-        }
-
-    </script> -->
-
 
 </html>

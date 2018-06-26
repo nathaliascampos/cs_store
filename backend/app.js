@@ -190,7 +190,7 @@ skin.get('/listarRifle', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
 
-    var strQuery = "SELECT nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
 
     console.log(strQuery);
 
@@ -206,8 +206,93 @@ skin.get('/listarRifle', function(req, res) {
 });
 
 //Listar Skins do tipo AWP
+skin.get('/listarAWP', function(req, res) {
+    var tipo_skin = "AWP";
+
+    var connection = mysql.createConnection(objConn);
+    connection.connect();
+
+    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+
+    console.log(strQuery);
+
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+        	res.jsonp(rows);
+        } else {
+        	res.jsonp(err);
+        }
+    });
+
+    connection.end();
+});
 
 //Listar Skins do tipo Pistol
+skin.get('/listarPistol', function(req, res) {
+    var tipo_skin = "Pistol";
+
+    var connection = mysql.createConnection(objConn);
+    connection.connect();
+
+    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+
+    console.log(strQuery);
+
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+        	res.jsonp(rows);
+        } else {
+        	res.jsonp(err);
+        }
+    });
+
+    connection.end();
+});
+
+//Listar Skins do tipo Knife
+skin.get('/listarKnife', function(req, res) {
+    var tipo_skin = "Knife";
+
+    var connection = mysql.createConnection(objConn);
+    connection.connect();
+
+    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+
+    console.log(strQuery);
+
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+        	res.jsonp(rows);
+        } else {
+        	res.jsonp(err);
+        }
+    });
+
+    connection.end();
+});
+
+//Buy
+skin.post('/buySkin', function(req, res){
+    var idUser = req.body.id;
+    var idSkin = req.body.id;
+
+    //var connection = mysql.createConnection(objConn)
+
+    var strQuery = "INSERT INTO user_has_skin (ser_idUser, Skin_idSkin) VALUES ('" + idUser + "', '" + idSkin + "');";
+
+    console.log(strQuery);
+
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+            res.jsonp(rows);
+        } else {
+            res.jsonp(err);
+        }
+    });
+
+    connection.end();
+});
+
 
 
 app.use('/user', user);
