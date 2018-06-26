@@ -6,6 +6,19 @@ table img {
     width: 30px;
 }
 
+.card .card-content {
+  /* width: 270px; */
+  /* height: 200px;
+  overflow: hidden; */ */
+} 
+
+.card .card-image img{ 
+  /* width: 350px;
+  height: 450px; */
+  /* border: 1px solid red;
+  width: 100%; */
+}
+
 body {
     font-family: "Lato", Arial, sans-serif;
     font-weight: 400;

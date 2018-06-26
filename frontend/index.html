@@ -38,6 +38,7 @@
             background-position: right top;
             background-attachment: fixed; */
         }
+        
     </style>
         
 </head>
@@ -59,7 +60,6 @@
                 
                 <li><a href="login.html">Login</a></li>
                 <li><a href="minhaconta.html">Minha Conta</a></li>
-                <li><a href="money.html">Add money</a></li>
 
             </ul>
         </div>
@@ -69,7 +69,6 @@
     <ul id="mobile-demo" class="sidenav">
         <li><a href="login.html">Login</a></li>
         <li><a href="minhaconta.html">Minha Conta</a></li>
-        <li><a href="money.html">Add money</a></li>
     </ul> 
 
     <!-- Card com tabs-->
@@ -77,7 +76,7 @@
         <div class="card">
             
             <div class="card-content">
-                    <p class="center">Choose your skin</p>
+                    <p class="center">Essas são as nossas skins disponpíveis, compre e divirta-se.</p>
             </div>
 
             <div class="card-tabs">
@@ -148,7 +147,7 @@
         </div>
         
         <div class="footer-copyright">
-          <div class="container">© 2014 Copyright Text</div>
+          <div class="container">© 2018 Copyright Text</div>
         </div>
     </footer>
 
@@ -209,10 +208,11 @@
                                     '<div class="card-image">'+
                                         '<img src="images/' + this.idSkin + '.png">'+
                                     '</div>'+
-                                    '<div class="card-content center">'+
-                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                    '<div class="card-content center" style="padding-left: 7px!important; padding-right: 7px!important">'+
+                                        '<span class="card-title"> ' + this.nome +  ' </span>'+
+                                        '<span class="card-title" style="font-size: 22px"> ' + this.nome_skin +  ' </span>'+
                                         '<p> R$' + this.preco + ',00 </p>'+
-                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Comprar</a>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'
@@ -244,10 +244,11 @@
                                     '<div class="card-image">'+
                                         '<img src="images/' + this.idSkin + '.png">'+
                                     '</div>'+
-                                    '<div class="card-content center">'+
-                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                    '<div class="card-content center" style="padding-left: 7px!important; padding-right: 7px!important">'+
+                                        '<span class="card-title"> ' + this.nome +  ' </span>'+
+                                        '<span class="card-title" style="font-size: 22px"> ' + this.nome_skin +  ' </span>'+
                                         '<p> R$' + this.preco + ',00 </p>'+
-                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Comprar</a>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'
@@ -279,10 +280,11 @@
                                     '<div class="card-image">'+
                                         '<img src="images/' + this.idSkin + '.png">'+
                                     '</div>'+
-                                    '<div class="card-content center">'+
-                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                    '<div class="card-content center" style="padding-left: 7px!important; padding-right: 7px!important">'+
+                                        '<span class="card-title"> ' + this.nome +  ' </span>'+
+                                        '<span class="card-title" style="font-size: 22px"> ' + this.nome_skin +  ' </span>'+
                                         '<p> R$' + this.preco + ',00 </p>'+
-                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Comprar</a>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'
@@ -314,10 +316,11 @@
                                     '<div class="card-image">'+
                                         '<img src="images/' + this.idSkin + '.png">'+
                                     '</div>'+
-                                    '<div class="card-content center">'+
-                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                    '<div class="card-content center" style="padding-left: 7px!important; padding-right: 7px!important">'+
+                                        '<span class="card-title"> ' + this.nome +  ' </span>'+
+                                        '<span class="card-title" style="font-size: 22px"> ' + this.nome_skin +  ' </span>'+
                                         '<p> R$' + this.preco + ',00 </p>'+
-                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Comprar</a>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'
@@ -349,10 +352,11 @@
                                     '<div class="card-image">'+
                                         '<img src="images/' + this.idSkin + '.png">'+
                                     '</div>'+
-                                    '<div class="card-content center">'+
-                                        '<span class="card-title"> ' + this.nome_skin +  ' </span>'+
+                                    '<div class="card-content center" style="padding-left: 7px!important; padding-right: 7px!important">'+
+                                        '<span class="card-title"> ' + this.nome +  ' </span>'+
+                                        '<span class="card-title" style="font-size: 22px"> ' + this.nome_skin +  ' </span>'+
                                         '<p> R$' + this.preco + ',00 </p>'+
-                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Buy</a>'+
+                                        '<a class=" waves-effect waves-light btn" onclick="buy()">Comprar</a>'+
                                     '</div>'+
                                 '</div>'+
                             '</div>'
@@ -370,7 +374,7 @@
 
             decisao = confirm("Tem certeza que deseja comprar essa skin?");
                 if (decisao){
-                    alert("Skin comprada!"); 
+                    alert("Skin comprada! Em dois dias ela estará na sua steam. "); 
                 } 
 
             $.ajax({

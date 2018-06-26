@@ -48,7 +48,6 @@
             <ul id="nav-mobile" class="right hide-on-med-and-down text-blue-grey">
                 <li><a href="login.html">Login</a></li>
                 <li><a href="minhaconta.html">Minha Conta</a></li>
-                <li><a href="money.html">Add money</a></li>
             </ul>
         </div>
     </nav> 
@@ -57,12 +56,15 @@
     <ul id="mobile-demo" class="sidenav">
         <li><a href="login.html">Login</a></li>
         <li><a href="minhaconta.html">Minha Conta</a></li>
-        <li><a href="money.html">Add money</a></li>
     </ul> 
     
     <div class="container">
         <div class="card-panel">
-            <p> Textooo!</p>
+            <h2> Bem Vindo! </h2>
+            <p>No momento você tem R$4000,00 para comprar suas skins. </p>
+            <p>Se precisar de mais, clique aqui:</p>
+            <a class="btn-floating pulse btn-large"><i class="material-icons" onclick="money()">add</i></a>
+            
         </div>
     </div>
 
@@ -110,6 +112,18 @@
         $(document).ready(function(){
             $('.parallax').parallax();
         });
+    </script>
+
+    <script type="text/javascript">    
+    
+    function money(){
+       
+        var quantia;
+
+            quantia = prompt ("Quantos reais você precisa?");
+            alert ("Você acabou de colocar "+ quantia + " reais na sua conta.");        
+    }
+
     </script>
 
 </body>
