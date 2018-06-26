@@ -91,28 +91,7 @@ user.get('/listarTodos', function(req, res) {
     connection.end();
 });
 
-//Login user
-user.post('/loginUser', function(req, res) {
-    var loginUser = req.body.login;
-    var senhaUser = req.body.senha;
 
-    var connection = mysql.createConnection(objConn);
-    connection.connect();
-
-    var strQuery = "SELECT * FROM user WHERE login = '" +  loginUser + "' AND senha = '" + senhaUser + "' ";
-
-    console.log(strQuery);
-
-    connection.query(strQuery, function(err, rows, fields) {
-        if (!err) {
-        	res.jsonp(rows);
-        } else {
-        	res.jsonp(err);
-        }
-    });
-
-    connection.end();
-});
 
 
 //BUSCAR USER POR ID: vai ter
@@ -161,6 +140,31 @@ user.get('/buscarPorId/:id', function(req, res) {
 //     connection.end();
 // });
 
+
+
+//Login user
+user.post('/loginUser', function(req, res) {
+    var loginUser = req.body.login;
+    var senhaUser = req.body.senha;
+
+    var connection = mysql.createConnection(objConn);
+    connection.connect();
+
+    var strQuery = "SELECT * FROM user WHERE login = '" +  loginUser + "' AND senha = '" + senhaUser + "' ";
+
+    console.log(strQuery);
+
+    connection.query(strQuery, function(err, rows, fields) {
+        if (!err) {
+        	res.jsonp(rows);
+        } else {
+        	res.jsonp(err);
+        }
+    });
+
+    connection.end();
+});
+
 //  ----SKIN----
 
 //Listar todas as skins
@@ -190,7 +194,7 @@ skin.get('/listarRifle', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
 
-    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+    var strQuery = "SELECT idSkin, nome, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
 
     console.log(strQuery);
 
@@ -212,7 +216,7 @@ skin.get('/listarAWP', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
 
-    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+    var strQuery = "SELECT idSkin, nome, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
 
     console.log(strQuery);
 
@@ -234,7 +238,7 @@ skin.get('/listarPistol', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
 
-    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+    var strQuery = "SELECT idSkin, nome, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
 
     console.log(strQuery);
 
@@ -256,7 +260,7 @@ skin.get('/listarKnife', function(req, res) {
     var connection = mysql.createConnection(objConn);
     connection.connect();
 
-    var strQuery = "SELECT idSkin, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
+    var strQuery = "SELECT idSkin, nome, nome_skin, preco FROM skin WHERE tipo = '" + tipo_skin + "'";
 
     console.log(strQuery);
 
@@ -292,8 +296,6 @@ skin.post('/buySkin', function(req, res){
 
     connection.end();
 });
-
-
 
 app.use('/user', user);
 app.use('/skin', skin);

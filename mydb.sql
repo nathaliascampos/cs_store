@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: 26-Jun-2018 às 03:50
+-- Generation Time: 26-Jun-2018 às 19:55
 -- Versão do servidor: 10.1.31-MariaDB
 -- PHP Version: 7.2.4
 
@@ -42,26 +42,26 @@ CREATE TABLE `skin` (
 --
 
 INSERT INTO `skin` (`idSkin`, `nome`, `nome_skin`, `tipo`, `preco`, `quantidade`) VALUES
-(1, 'M4A4', 'M4A4 | Dragon King', 'Rifle', 25, 10),
-(2, 'M4A1-S', 'M4A1-S | Hyper Beast', 'Rifle', 35, 10),
-(3, 'AK-47', 'AK-47 | Imperatriz', 'Rifle', 180, 10),
-(4, 'Galil AR', 'Galil AR | Cerberus', 'Rifle', 40, 10),
-(5, 'FAMAS', 'FAMAS | Valence', 'Rifle', 3, 10),
-(6, 'AWP', 'AWP | Hyper Beast', 'AWP', 90, 10),
-(7, 'AWP', 'AWP | Sabedoria do Dragão', 'AWP', 3800, 10),
-(8, 'AWP', 'AWP | Sonho Febril', 'AWP', 29, 10),
-(9, 'AWP', 'AWP | Oni Taiji', 'AWP', 220, 10),
-(10, 'AWP', 'AWP | Mortis', 'AWP', 45, 10),
-(11, 'Glock', 'Glock-18 | Water Elemental', 'Pistol', 22, 10),
-(12, 'USP', 'USP-S | Cyrex', 'Pistol', 8, 10),
-(13, 'Desert Eagle', 'Desert Eagle | Midnight Storm', 'Pistol', 12, 10),
-(14, 'CZ75-Auto', 'CZ75-Auto | Tacticat', 'Pistol', 2, 10),
-(15, 'P250', 'P250 | Asiimov', 'Pistol', 11, 10),
-(16, 'Karambit', 'Karambit | Night', 'Knife', 541, 10),
-(17, 'Butterfly', 'Butterfly Knife | Scorched', 'Knife', 350, 10),
-(18, 'Bayonet', 'Bayonet | Rust Coat', 'Knife', 420, 10),
-(19, 'Bowie', 'Bowie Knife | Ultraviolet', 'Knife', 230, 10),
-(20, 'Falchion', 'Falchion Knife | Case Hardened', 'Knife', 260, 10);
+(1, 'M4A4', 'Dragon King', 'Rifle', 25, 10),
+(2, 'M4A1-S', 'Hyper Beast', 'Rifle', 35, 10),
+(3, 'AK-47', 'Imperatriz', 'Rifle', 180, 10),
+(4, 'Galil AR', 'Cerberus', 'Rifle', 40, 10),
+(5, 'FAMAS', 'Valence', 'Rifle', 3, 10),
+(6, 'AWP', 'Hyper Beast', 'AWP', 90, 10),
+(7, 'AWP', 'Sabedoria do Dragão', 'AWP', 3800, 10),
+(8, 'AWP', 'Sonho Febril', 'AWP', 29, 10),
+(9, 'AWP', 'Oni Taiji', 'AWP', 220, 10),
+(10, 'AWP', 'Mortis', 'AWP', 45, 10),
+(11, 'Glock', 'Water Elemental', 'Pistol', 22, 10),
+(12, 'USP', 'Cyrex', 'Pistol', 8, 10),
+(13, 'Desert Eagle', 'Midnight Storm', 'Pistol', 12, 10),
+(14, 'CZ75-Auto', 'Tacticat', 'Pistol', 2, 10),
+(15, 'P250', 'Asiimov', 'Pistol', 11, 10),
+(16, 'Karambit', 'Night', 'Knife', 541, 10),
+(17, 'Butterfly', 'Scorched', 'Knife', 350, 10),
+(18, 'Bayonet', 'Rust Coat', 'Knife', 420, 10),
+(19, 'Bowie', 'Ultraviolet', 'Knife', 230, 10),
+(20, 'Falchion', 'Case Hardened', 'Knife', 260, 10);
 
 -- --------------------------------------------------------
 
