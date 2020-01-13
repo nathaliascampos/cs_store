@@ -1,7 +1,7 @@
 # cs_store
 
 Install the node dependencies from backend: 
-<li>npm install</li>
+### `npm install`
 
 Run on terminal:
-<li>node app.js</li>
+### `node app.js`
